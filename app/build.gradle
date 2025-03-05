@@ -45,6 +45,11 @@ dependencies {
     implementation libs.guava
 }
 
+//Required to get user input form keyboard
+run {
+    standardInput = System.in
+}
+
 // Gradle’s built-in test task to use the JUnit 5 platform
 test {
     useJUnitPlatform()
