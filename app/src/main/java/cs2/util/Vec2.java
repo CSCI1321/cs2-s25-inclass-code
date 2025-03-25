@@ -13,6 +13,9 @@ public class Vec2 {
     this.y = 0;
   }
   //Methods
+  public Vec2 clone() {
+    return new Vec2(this.x, this.y);
+  }
   public double getX() { return this.x; }
   public double getY() { return this.y; }
   public Vec2 add(Vec2 other) {
