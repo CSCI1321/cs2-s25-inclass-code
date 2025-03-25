@@ -3,11 +3,11 @@ package cs2.particles;
 import cs2.util.Vec2;
 import javafx.scene.canvas.GraphicsContext;
 
-public class Particle {
+public abstract class Particle {
   //Fields
-  private Vec2 pos;
-  private Vec2 vel;
-  private double r = 5;
+  protected Vec2 pos;
+  protected Vec2 vel;
+  protected double r = 5;
   //Constructor
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
@@ -19,9 +19,8 @@ public class Particle {
     this.vel = new Vec2();
   }*/
   //Method
-  public void display(GraphicsContext g) {
-    g.fillOval(this.pos.getX(), this.pos.getY(), 2*r, 2*r);
-  }
+  public abstract void display(GraphicsContext g);
+
   public void update() {
     this.pos.addThis(this.vel);
   }

@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -15,6 +16,9 @@ import javafx.stage.Stage;
 
 public class ParticleSystemApp extends Application {
   Vec2 wind = new Vec2();
+
+  public static final Image starImg = new Image("file:star.png");
+
   public void start(Stage stg) {
     Canvas canvas = new Canvas(600,600);
     Scene scene = new Scene(new StackPane(canvas));
@@ -23,6 +27,10 @@ public class ParticleSystemApp extends Application {
     stg.show();
 
     GraphicsContext g = canvas.getGraphicsContext2D();
+
+    Image img = new Image("file:star.png");
+    System.out.println(img.getHeight());
+    
 
     ArrayList<ParticleSystem> systems = new ArrayList<ParticleSystem>();
 
@@ -39,6 +47,9 @@ public class ParticleSystemApp extends Application {
       public void handle(long t) {
         g.setFill(Color.WHITE);
         g.fillRect(0,0,600,600);
+
+        //g.drawImage(img, 100, 200);
+
         g.setFill(Color.BLUE);
         for(ParticleSystem ps : systems) {
           ps.display(g);
