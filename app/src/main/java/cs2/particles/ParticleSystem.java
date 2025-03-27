@@ -21,8 +21,10 @@ public class ParticleSystem {
   }
   //Methods
   public void addParticle() {
-    parts.add(new ImageParticle(origin.clone(), new Vec2(Math.random()*6-3, Math.random()*6-3),
-      ParticleSystemApp.starImg));
+    parts.add(new RainbowParticle(origin.clone(), new Vec2(Math.random()*6-3, Math.random()*6-3)));
+    
+    //parts.add(new ImageParticle(origin.clone(), new Vec2(Math.random()*6-3, Math.random()*6-3),
+    //  ParticleSystemApp.starImg));
     /*
     if(Math.random() < 0.5) {
       parts.add(new SquareParticle(origin.clone(), new Vec2(Math.random()*6-3, 

@@ -14,6 +14,7 @@ public class ImageParticle extends Particle {
 
   @Override
   public void display(GraphicsContext g) {
+    g.setGlobalAlpha(0.2);
     g.drawImage(img, pos.getX(), pos.getY());
   }
 

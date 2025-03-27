@@ -2,16 +2,19 @@ package cs2.particles;
 
 import cs2.util.Vec2;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 public abstract class Particle {
   //Fields
   protected Vec2 pos;
   protected Vec2 vel;
   protected double r = 5;
+  protected Color col;
   //Constructor
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
     this.vel = v;
+    this.col = Color.BLUE;
   }
   /* 
   public Particle() {

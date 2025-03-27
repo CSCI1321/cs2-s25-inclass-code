@@ -52,8 +52,8 @@ public class ParticleSystemApp extends Application {
 
         g.setFill(Color.BLUE);
         for(ParticleSystem ps : systems) {
-          ps.display(g);
           ps.update();
+          ps.display(g);
           ps.addParticle();
           ps.addForce(new Vec2(0,0.05));
           ps.addForce(wind);
