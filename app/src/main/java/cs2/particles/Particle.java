@@ -9,12 +9,13 @@ public abstract class Particle {
   protected Vec2 pos;
   protected Vec2 vel;
   protected double r = 5;
-  protected Color col;
+  protected ColorPattern cp;
   //Constructor
   public Particle(Vec2 p, Vec2 v) {
     this.pos = p;
     this.vel = v;
-    this.col = Color.BLUE;
+    //this.cp = new SolidColor(Color.VIOLET);
+    this.cp = new RainbowColor();
   }
   /* 
   public Particle() {
