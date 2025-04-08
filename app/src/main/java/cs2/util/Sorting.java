@@ -14,10 +14,10 @@ public class Sorting {
     }
   }
 
-  public static <T> void bubbleSortGeneric(T[] arr) {
+  public static <T extends Comparable<T>> void bubbleSortGeneric(T[] arr) {
     for(int j=0; j<arr.length; j++) {
       for(int i=0; i<arr.length-1; i++) {
-        if(arr[i] > arr[i+1]) {
+        if(arr[i].compareTo(arr[i+1]) > 0) {
           T tmp = arr[i];
           arr[i] = arr[i+1];
           arr[i+1] = tmp;
@@ -32,9 +32,21 @@ public class Sorting {
     bubbleSort(x);
     System.out.println();
     for(int z : x) System.out.print(z + ",");
+    System.out.println();
 
     Double[] d = {3.4, 2.1, 6.7, Math.PI, Math.E };
-    bubbleSort(d);
+    for(double z : d) System.out.print(z + ",");
+    bubbleSortGeneric(d);
+    System.out.println();
+    for(double z : d) System.out.print(z + ",");
+    System.out.println();
+
+    String[] s = { "Alice", "Cindy", "Bob", "Daniel", "Elaine" };
+    for(String z : s) System.out.print(z + ",");
+    bubbleSortGeneric(s);
+    System.out.println();
+    for(String z : s) System.out.print(z + ",");
+    System.out.println();
 
   }
 }
