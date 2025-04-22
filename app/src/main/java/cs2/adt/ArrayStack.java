@@ -1,8 +1,15 @@
 package cs2.adt;
 
+import java.util.EmptyStackException;
+
 public class ArrayStack<T> implements Stack<T> {
   private T[] a;
   private int len;
+
+  public ArrayStack() {
+    a = (T[]) new Object[10];
+    len = 0;
+  }
 
   public void push(T elem) {
     if(a.length == len) {
@@ -16,10 +23,16 @@ public class ArrayStack<T> implements Stack<T> {
     len += 1;
   }
   public T pop() {
+    if(isEmpty()) {
+      throw new EmptyStackException();
+    }
     len -= 1;
     return a[len];
   }
   public T peek() {
+    if(isEmpty()) {
+      throw new EmptyStackException();
+    }
     return a[len-1];
   }
   public boolean isEmpty() {
